@@ -1,3 +1,8 @@
+/**
+ * Benjamin Sheeley.
+ * CSC207 Mini Project 1.
+ * CipherUtils.java.
+ */
 package edu.grinnell.csc207.util;
 
 /**

@@ -1,3 +1,8 @@
+/**
+ * Benjamin Sheeley.
+ * CSC207 Mini Project 1.
+ * AllCaesar.java.
+ */
 package edu.grinnell.csc207.main;
 
 import java.io.PrintWriter;
