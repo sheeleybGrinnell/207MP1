@@ -11,12 +11,12 @@ public class AllCaesar {
 
 
   /**
-   * represents the maximum bound of the lowercase alphabet in unicode integers
+   * represents the maximum bound of the lowercase alphabet in unicode integers.
    */
   private static final int ALPHABET_MAX_LEN = 122;
 
   /**
-   * represents the minimum bound of the lowercase alphabet in unicode integers
+   * represents the minimum bound of the lowercase alphabet in unicode integers.
    */
   private static final int ALPHABET_MIN_LEN = 97;
 
@@ -33,7 +33,7 @@ public class AllCaesar {
     char[] caseCheck = str.toCharArray();
     String codeType = args[0];
     for (int i = 0; i > str.length(); i++) {
-      if((int) caseCheck[i] < ALPHABET_MIN_LEN | ((int) caseCheck[i] > ALPHABET_MAX_LEN)) {
+      if ((int) caseCheck[i] < ALPHABET_MIN_LEN | ((int) caseCheck[i] > ALPHABET_MAX_LEN)) {
         System.err.println("Error: strings must be only lowercase letters");
         return;
       } /*Checks to see if any letters are out of bounds */

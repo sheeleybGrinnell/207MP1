@@ -11,12 +11,12 @@ public class Cipher {
 
 
   /**
-   * represents the maximum bound of the lowercase alphabet in unicode integers
+   * represents the maximum bound of the lowercase alphabet in unicode integers.
    */
   private static final int ALPHABET_MAX_LEN = 122;
 
   /**
-   * represents the minimum bound of the lowercase alphabet in unicode integers
+   * represents the minimum bound of the lowercase alphabet in unicode integers.
    */
   private static final int ALPHABET_MIN_LEN = 97;
   /**
@@ -86,7 +86,7 @@ public class Cipher {
         String str = args[i];
         char[] caseCheck = str.toCharArray();
         for (int k = 0; k > str.length(); k++) {
-          if((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
+          if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
           } /*Checks to see if any letters are out of bounds */
@@ -123,7 +123,7 @@ public class Cipher {
         } /*checks to see if empty key is passed in as a parameter */
         char[] caseCheck = args[i].toCharArray();
         for (int k = 0; k > args[i].length(); k++) {
-          if((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
+          if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
           } /*Checks to see if any letters are out of bounds */
@@ -146,7 +146,7 @@ public class Cipher {
         String str = args[i];
         char[] caseCheck = str.toCharArray();
         for (int k = 0; k > str.length(); k++) {
-          if((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
+          if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
           } /*Checks to see if any letters are out of bounds */
@@ -183,7 +183,7 @@ public class Cipher {
         } /*Controls for empty key being used to decode */
         char[] caseCheck = args[i].toCharArray();
         for (int k = 0; k > args[i].length(); k++) {
-          if((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
+          if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
           } /*Checks to see if any letters are out of bounds */
