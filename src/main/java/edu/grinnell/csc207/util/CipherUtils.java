@@ -24,7 +24,7 @@ public class CipherUtils {
    * @param letter character to be turned into an integer.
    * @return returns int that matches letter.
    */
-  private static int letter2int(char letter) {
+  public static int letter2int(char letter) {
     int convertedInt = (int) letter - LETTER_OFFSET;
     return convertedInt;
   } /*letter2int() */
@@ -33,7 +33,7 @@ public class CipherUtils {
  * @param i int to be converted to character.
  * @return returns character that matches i.
  */
-  private static char int2letter(int i) {
+  public static char int2letter(int i) {
     char convertedLetter = (char) (i + LETTER_OFFSET);
     return convertedLetter;
   } /*int2letter() */

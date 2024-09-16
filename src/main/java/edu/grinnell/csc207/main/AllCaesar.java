@@ -23,22 +23,22 @@ public class AllCaesar {
   /**
    * represents the minimum bound of the lowercase alphabet in unicode integers.
    */
-  private static final int ALPHABET_MIN_LEN = 97;
+  private static final int ALPHABET_MIN_LEN = 96;
 
 
   /**
    * @param args arguments passed in as input. An encoding option and string.
    */
   public static void main(String[] args) {
-    if (args.length < 2) {
+    if (args.length != 2) {
       System.err.println("Error: Incorrect number of parameters.");
       return;
     } /*Checks for incorrect number of parameters */
     String str = args[1];
     char[] caseCheck = str.toCharArray();
     String codeType = args[0];
-    for (int i = 0; i > str.length(); i++) {
-      if ((int) caseCheck[i] < ALPHABET_MIN_LEN | ((int) caseCheck[i] > ALPHABET_MAX_LEN)) {
+    for (int i = 0; i < caseCheck.length; i++) {
+      if (((int) caseCheck[i] > ALPHABET_MIN_LEN) | ((int) caseCheck[i] < ALPHABET_MAX_LEN)) {
         System.err.println("Error: strings must be only lowercase letters");
         return;
       } /*Checks to see if any letters are out of bounds */

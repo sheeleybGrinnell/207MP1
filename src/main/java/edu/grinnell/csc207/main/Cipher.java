@@ -41,14 +41,15 @@ public class Cipher {
       if (args[i].contains("-encode")) {
         args[i] = "CaseFilled";
         Cipher.encode(args);
+        return;
       } /*controls for -encode argument */ else if (args[i].contains("-decode")) {
         args[i] = "CaseFilled";
         Cipher.decode(args);
-      } /*controls for -decode argument */ else if (args[i].contains("-")) {
-        System.err.println("Error: Legal Action values are '-encode' and '-decode'");
         return;
-      } /*controls for possible misspellings of action arguments */
+      } /*controls for -decode argument */
     } /*loops until it finds an encode or decode argument */
+    System.err.println("Error: Legal Action values are '-encode' and '-decode'");
+    return;
   } /*main() */
 
   /**
@@ -59,9 +60,11 @@ public class Cipher {
       if (args[i].contains("-caesar")) {
         args[i] = "CaseFilled";
         Cipher.encodeCaesar(args);
+        return;
       } /*sends arguments to encode with caesar cipher */ else if (args[i].contains("-vigenere")) {
         args[i] = "CaseFilled";
         Cipher.encodeVigenere(args);
+        return;
       } /*sends arguments to encode with vigenere cipher */
     } /*loops until it finds cipher to encode with */
   } /*encode() */
@@ -74,9 +77,11 @@ public class Cipher {
       if (args[i].contains("-caesar")) {
         args[i] = "CaseFilled";
         Cipher.decodeCaesar(args);
+        return;
       } /*sends arguments to decode with caesar cipher */ else if (args[i].contains("-vigenere")) {
         args[i] = "CaseFilled";
         Cipher.decodeVigenere(args);
+        return;
       } /*sends arguments to decode with vigenere cipher */
     } /*loops until it finds cipher to encode with */
   } /*decode() */
@@ -90,7 +95,7 @@ public class Cipher {
       if ((args[i].compareTo("CaseFilled") != 0)) {
         String str = args[i];
         char[] caseCheck = str.toCharArray();
-        for (int k = 0; k > str.length(); k++) {
+        for (int k = 0; k < str.length(); k++) {
           if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
@@ -100,7 +105,7 @@ public class Cipher {
         for (int j = 0; j < PARAM_AMOUNT; j++) {
           if ((args[j].compareTo("CaseFilled") != 0)) {
             char[] keyArray = args[j].toCharArray();
-            if (keyArray.length > 1) {
+            if (keyArray.length != 1) {
               System.err.println("Error: Caesar ciphers require a one-character key");
               return;
             } /*controls for a multi-character key as an argument */
@@ -122,12 +127,12 @@ public class Cipher {
     PrintWriter pen = new PrintWriter(System.out, true);
     for (int i = 0; i < PARAM_AMOUNT; i++) {
       if ((args[i].compareTo("CaseFilled") != 0)) {
-        if (args[i + 1].contains("")) {
+        if (args[i + 1].length() == 0) {
           System.err.println("Error: Empty keys are not permitted");
           return;
         } /*checks to see if empty key is passed in as a parameter */
         char[] caseCheck = args[i].toCharArray();
-        for (int k = 0; k > args[i].length(); k++) {
+        for (int k = 0; k < args[i].length(); k++) {
           if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
@@ -150,7 +155,7 @@ public class Cipher {
       if ((args[i].compareTo("CaseFilled") != 0)) {
         String str = args[i];
         char[] caseCheck = str.toCharArray();
-        for (int k = 0; k > str.length(); k++) {
+        for (int k = 0; k < str.length(); k++) {
           if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
@@ -182,12 +187,12 @@ public class Cipher {
     PrintWriter pen = new PrintWriter(System.out, true);
     for (int i = 0; i < PARAM_AMOUNT; i++) {
       if ((args[i].compareTo("CaseFilled") != 0)) {
-        if (args[i + 1].contains("")) {
+        if (args[i + 1].length() == 0) {
           System.err.println("Error: Empty keys are not permitted");
           return;
         } /*Controls for empty key being used to decode */
         char[] caseCheck = args[i].toCharArray();
-        for (int k = 0; k > args[i].length(); k++) {
+        for (int k = 0; k < args[i].length(); k++) {
           if ((int) caseCheck[k] < ALPHABET_MIN_LEN | ((int) caseCheck[k] > ALPHABET_MAX_LEN)) {
             System.err.println("Error: strings must be only lowercase letters");
             return;
